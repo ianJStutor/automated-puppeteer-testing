@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Puppeteer Testing</title>
+        <link rel="stylesheet" href="style.css">
+        <script defer src="script.js"></script>
+    </head>
+    <body>
+        <header>
+            <picture>
+                <source srcset="https://picsum.photos/id/766/500/200" media="(max-width: 500px)">
+                <img src="https://picsum.photos/id/766/800/200" alt="Coffee beans">
+            </picture>
+            <h1>Gourmet Coffee Tasting</h1>
+        </header>
+        <main>
+            <form>
+                <h2>Reserve a time for this weekend!</h2>
+                <label for="name">Name: (required) <span class="err"></span></label>
+                <input id="name">
+                <label for="reservation">Reservation:</label>
+                <select id="reservation">
+                    <option value="Sat10">Saturday 10 AM</option>
+                    <option value="Sat12">Saturday 12 PM</option>
+                    <option value="Sat03">Saturday 3 PM</option>
+                    <option value="Sun10">Sunday 10 AM</option>
+                    <option value="Sun12">Sunday 12 PM</option>
+                    <option value="Sun03">Sunday 3 PM</option>
+                </select>
+                <button>Submit Reservation</button>
+            </form>
+        </main>
+    </body>
+</html>

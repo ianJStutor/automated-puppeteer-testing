@@ -1,0 +1,74 @@
+:root {
+    --medbrown: #6e4c4b;
+    --darkbrown: #2a1b1d;
+}
+
+html {
+    background: var(--darkbrown);
+    font-size: 100%;
+}
+
+body {
+    background: cornsilk;
+    font-family: sans-serif;
+    margin: 0 auto;
+    max-width: 800px;
+    min-height: 100vh;
+    text-align: center;
+}
+
+main {
+    padding: 2em;
+}
+
+form {
+    background: white;
+    border-radius: 0.5em;
+    padding: 1em;
+}
+
+.reservation-confirmed form {
+    display: none;
+}
+
+input, select, label {
+    display: block;
+    width: 100%;
+}
+
+input, select {
+    box-sizing: border-box;
+    font-size: 1.25em;
+    padding: 0.5em;
+}
+
+label {
+    font-weight: bold;
+    margin: 1.5em 0 0.5em;
+    text-align: left;
+}
+
+button {
+    color: white;
+    cursor: pointer;
+    background: var(--darkbrown);
+    border-radius: 0.5em;
+    display: block;
+    font-size: 1.25em;
+    margin: 2em auto 0;
+    padding: 1em;
+    transition: 0.25s;
+    width: 90%;
+}
+
+button:hover {
+    background: var(--medbrown);
+}
+
+img {
+    max-width: 100%;
+}
+
+.err {
+    color: red;
+}

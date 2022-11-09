@@ -1,0 +1,17 @@
+{
+  "name": "automaticpuppeteertesting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server -dev",
+    "start": "node server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^19.2.2"
+  },
+  "type": "module"
+}
