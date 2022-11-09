@@ -11,11 +11,13 @@ function handleSubmit(e) {
     }
     const select = document.querySelector("#reservation");
     const reservation = select[select.selectedIndex].textContent;
+    const formData = { name, reservation };
+
     // Simulate server delay
-    setTimeout(() => reservationConfirmed(name, reservation), Math.random() * 1000);
+    setTimeout(() => reservationConfirmed(formData), Math.random() * 1000);
 }
 
-function reservationConfirmed(name, reservation) {
+function reservationConfirmed({ name, reservation }) {
     const h2 = document.createElement("h2");
     const p = document.createElement("p");
     const main = document.querySelector("main");
