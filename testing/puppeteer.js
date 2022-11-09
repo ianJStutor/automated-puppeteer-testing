@@ -8,14 +8,16 @@ async function test(HOST, PORT) {
     const page = await browser.newPage();
     await page.goto(`http://${HOST}:${PORT}`);
 
+    // Test 1
     await page.type("#name", "Rafael");
     await page.select("#reservation", "Sat03");
     await page.click("form button");
-
     await page.waitForSelector("#confirmation");
     const message1 = await page.$eval("#confirmation", p => p.textContent);
     const expected1 = "Rafael, thank you for your reservation for Saturday 3 PM.";
     console.log("Test 1", message1 === expected1 ? "PASS" : "FAIL");
+
+    
 
     await browser.close();
     console.timeEnd(timeLabel);
