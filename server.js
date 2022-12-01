@@ -2,7 +2,7 @@ import http from "http";
 import fs from "fs";
 import path from "path";
 import url from "url";
-import test from "./testing/puppeteer.js";
+//import runTests from "./testing/puppeteer.js";
 
 const HOST = "localhost";
 const PORT = 3000;
@@ -13,19 +13,23 @@ const __dirname = path.dirname(__filename);
 const server = http.createServer(router);
 
 if (DEVMODE) {
-    fs.readdir(__dirname + "/src", (err, files) => {
+	// Watch files in src folder
+    fs.readdir(`${__dirname}/src`, (err, files) => {
         for (let file of files) {
             fs.watchFile(`${__dirname}/src/${file}`, restartServer);
         }
     });
+	// Watch file in testing folder
+	fs.watchFile(`${__dirname}/testing/puppeteer.js`, restartServer);
 }
 
 function startServer() {
-    server.listen(PORT, HOST, () => {
+    server.listen(PORT, HOST, async () => {
         console.log(`Server is listening on http://${HOST}:${PORT}`);
         if (DEVMODE) {
+			const { default: runTests } = await import(`./testing/puppeteer.js?v=${Date.now()}`);
             console.log("Running in dev mode");
-            test(HOST, PORT);
+            runTests(HOST, PORT);
         }
     });
 }
