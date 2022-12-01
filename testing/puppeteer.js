@@ -1,4 +1,5 @@
 import puppeteer from "puppeteer";
+import assert from 'node:assert/strict';
 
 async function test(HOST, PORT) {
     console.log("Puppeteer e2e testing...");
@@ -17,7 +18,7 @@ async function test(HOST, PORT) {
     const expected1 = "Rafael, thank you for your reservation for Saturday 3 PM.";
     console.log("Test 1", message1 === expected1 ? "PASS" : "FAIL");
 
-    
+
 
     await browser.close();
     console.timeEnd(timeLabel);

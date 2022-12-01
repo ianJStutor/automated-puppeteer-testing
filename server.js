@@ -31,8 +31,7 @@ function startServer() {
 }
 
 function restartServer() {
-    server.close();
-    startServer();
+    server.close(startServer);
 }
 
 function router(req, res) {
