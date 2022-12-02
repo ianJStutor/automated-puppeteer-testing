@@ -16,8 +16,7 @@ async function testReservation(page) {
 async function testCaffeineFreeReservation(page) {
 	await page.type("#name", "Zoya");
     await page.select("#reservation", "Sun12");
-	const decaf = await page.$("#decaf");
-	if (decaf) await page.click("#decaf");
+	await page.click("#decaf");
     await page.click("form button");
     await page.waitForSelector("#confirmation");
     const actual = await page.$eval("#confirmation", p => p.textContent);
