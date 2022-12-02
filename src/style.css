@@ -31,7 +31,7 @@ form {
     display: none;
 }
 
-input, select, label {
+input:not(#decaf), select, label:not([for="decaf"]) {
     display: block;
     width: 100%;
 }
