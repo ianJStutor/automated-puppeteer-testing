@@ -7,9 +7,6 @@
     "dev": "node server -dev",
     "start": "node server"
   },
-  "engines": {
-      "node": ">=19.0.0"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",

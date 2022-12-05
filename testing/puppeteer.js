@@ -1,5 +1,4 @@
 import puppeteer from "puppeteer";
-import test from "node:test";
 import assert from "node:assert/strict";
 
 async function testReservation(page) {
@@ -22,7 +21,7 @@ async function testCaffeineFreeReservation(page) {
     const actual = await page.$eval("#confirmation", p => p.textContent);
     const expected = "Zoya, thank you for your caffeine-free reservation for Sunday 12 PM.";
 	// Assertion:
-
+	
 }
 
 async function runTests(HOST, PORT) {
